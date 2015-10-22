@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
-## test hash
-## Write a short comment describing this function
+## This is my solution of makeCacheMatrix
+## This function have four methods in her :
+## Set & Get a matrix
+## Set & Get the invert of the created matrix
 
 makeCacheMatrix <- function(my_mat = matrix()) {
       inv_mat <- NULL
@@ -18,10 +18,12 @@ makeCacheMatrix <- function(my_mat = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This is my solution of CacheSolve, a function who give the invert of a matrix
+## who was created before with makeCacheMatrix. It check if the inverted matrix
+## exist, if so, it compute the inverse of this
 
 cacheSolve <- function(inv_mat, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        ## Return a matrix that is the inverse of 'inv_mat'
       my_mat <- inv_mat$getinvert()
       if(!is.null(my_mat)) {
             message("getting invert data")
@@ -32,10 +34,3 @@ cacheSolve <- function(inv_mat, ...) {
       inv_mat$setinvert(my_mat)
       my_mat
 }
-
-x = rbind(c(1, -1/4), c(-1/4, 1))
-m = makeCacheMatrix(x)
-m$get()
-test <- cacheSolve(m)
-print(test)
-cacheSolve(test)
